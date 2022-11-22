@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/responsive.css">
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- hamburger for mobile site -->
+    <img id="menu" src="/images/icon-menu.svg" alt="menu" onclick="showMobileNav()">
+
+    <!-- hamburger links for mobile site -->
+    <div class="menu-container">
+      <div class="hamburger-menu">
+        <img src="/images/icon-close.svg" alt="icon-close" onclick="closeMobileNav()">
+        <nav>
+          <ul>
+            <li>Collections</li>
+            <li>Men</li>
+            <li>Women</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!--logo-->
+    <img id="logo" src="/images/logo.svg" alt="logo">
+    <!--navlinks-->
+    <nav>
+      <ul>
+        <li>Collections</li>
+        <li>Men</li>
+        <li>Women</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+    <!-- left side of navbar -->
+    <div class="left-nav">
+      <button id="icon-cart" data-after=${}>
+      </button>
+      <button id="avatar" onclick="showPopup()"></button>
+      <article class="popup-content">
+        <h1>Cart</h1>
+        <div class="inner-content" style='display:block;'>
+          <p id="inner-content-placeholder">Your cart is empty.</p>
+        </div>
+        <div class="inner-content2" style='display:none;'>
+          <div class="cart-info">
+            <img id='cart-image' src="/images/image-product-1-thumbnail.jpg" alt="image-product-1-thumbnail" height="60px" width="60px">
+            <div>
+              <p>Autumn Limited Edition...</p>
+              <p><span id="unitAmount">$125.00</span> x <span id="itemCount"></span>  <span id="countResult"></span></p>
+            </div>
+            <img onclick='removeCart()' src="/images/icon-delete.svg" alt="icon-delete">
+          </div>
+        </div>
+        <button id='checkout-button' style="display: none;">Checkout</button>
+      </article>
+    </div>
+  </header>
+
+  <!-- Main container -->
+  <main>
+      <!-- lightbox container -->
+      <div class="lightbox">
+        <div class="lightbox-content">
+          <div class="icon-close" onclick="closeLightbox()">
+            <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                />
+            </svg>
+            <!-- <img src="/images/icon-close.svg" alt="icon-close"> -->
+          </div>
+          <div class="current-container">
+            <img id="current-image" src="/images/image-product-1.jpg" alt="product-one">
+          </div>
+          <div id="icon-next" class="icon icon-next">
+            <img onclick="next()" src="/images/icon-next.svg" alt="icon-next">
+          </div>
+          <div id="icon-prev" class="icon icon-prev">
+            <img onclick="prev()" src="/images/icon-previous.svg" alt="icon-previous">
+          </div>
+          <div class="images-container">
+            <img  onclick="displayPicture(0)" src="/images/image-product-1-thumbnail.jpg" alt="thumbnail for product">
+            <img  onclick="displayPicture(1)" src="/images/image-product-2-thumbnail.jpg" alt="thumbnail for product">
+            <img  onclick="displayPicture(2)" src="/images/image-product-3-thumbnail.jpg" alt="thumbnail for product">
+            <img  onclick="displayPicture(3)" src="/images/image-product-4-thumbnail.jpg" alt="thumbnail for product">
+          </div>
+        </div>
+      </div>
+
+    <!-- Left side of main container -->
+    <div class="left-section">
+      <img id="current-img" onclick="showLightbox()" src="/images/image-product-1.jpg" alt="product-one">
+      <img id="current-img-mobile" src="/images/image-product-1.jpg" alt="product-one">
+      <!-- arrows for mobile screen -->
+      <div class="nav-mobile">
+        <div onclick="nextMobile()" id="icon-next" class="icon icon-next">
+          <img src="/images/icon-next.svg" alt="icon-next">
+        </div>
+        <div onclick="prevMobile()" id="icon-prev" class="icon icon-prev">
+          <img src="/images/icon-previous.svg" alt="icon-previous">
+        </div>
+      </div>
+      <div class="images-container">
+        <img  onclick="displayPicture2(0)" src="/images/image-product-1-thumbnail.jpg" alt="thumbnail for product">
+        <img  onclick="displayPicture2(1)" src="/images/image-product-2-thumbnail.jpg" alt="thumbnail for product">
+        <img  onclick="displayPicture2(2)" src="/images/image-product-3-thumbnail.jpg" alt="thumbnail for product">
+        <img  onclick="displayPicture2(3)" src="/images/image-product-4-thumbnail.jpg" alt="thumbnail for product">
+      </div>
+    </div>
+
+    <!-- Right side of main container -->
+    <div class="right-section">
+      <h1>Sneaker Company</h1>
+      <h2>Fall Limited Edition Sneakers</h2>
+      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+      <div class="price-section">
+        <h3>$125.00<span>50%</span></h3>
+        <h4>$250.00</h4>
+      </div>
+      <div class="button-section">
+        <!--button for amount-->
+        <button class="button-amount">
+          <span>
+            <img onclick="minusCount()" src="/images/icon-minus.svg" alt="icon-minus">
+          </span>
+          <p id="amount-text">
+            0
+          </p>
+          <span>
+            <img onclick="addCount()" src="/images/icon-plus.svg" alt="icon-plus">
+          </span>
+        </button>
+
+        <!-- button for cart -->
+        <button class="button-cart" onclick="addToCart()">
+          <span>
+            <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                fill="hsl(0, 0%, 100%)" fill-rule="nonzero" />
+            </svg>
+            <!-- <img src="/images/icon-cart.svg" alt="icon-cart"> -->
+          </span>
+          Add to cart</button>
+      </div>
+    </div>
+    
+  </main>
+
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Vodina Efem</a>.
+  </div>
+
+  <script src="script.js">
+
+  </script>
+</body>
+</html>

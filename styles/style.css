@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+body{
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 1.4rem 8rem;
+    width: 100%;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 16px;
+}
+
+
+header{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.8rem;
+    color: hsl(219, 9%, 45%);
+    border-bottom: solid 1px  hsl(220, 14%, 75%);
+}
+
+header > nav > ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+header > nav > ul > li {
+    margin: 0 1rem;
+    position: relative;
+}
+
+header > nav > ul > li:hover{
+    cursor: pointer;
+    color: hsl(220, 13%, 13%);
+    transition: all 0.2s;
+}
+
+header > nav > ul > li::after{
+    content: "";
+    position: absolute;
+    background-color: hsl(26, 100%, 55%);
+    width: 0%;
+    height: 4px;
+    left: 0;
+    bottom: -46px;
+}
+
+header > nav > ul > li:hover::after{
+    width: 100%;
+    transition: all 0.2s;
+}
+
+#menu{
+    display: none;
+}
+
+.left-nav{
+    margin-left: auto;
+}
+
+#icon-cart{
+    background-image: url(/images/icon-cart.svg);
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-color: white;
+    border: none;
+    height: 2rem;
+    width: 2rem;
+}
+
+#inner-content-placeholder{
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.inner-content{
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+    height: 100%;
+    margin: 0 auto;
+}
+
+/* .inner-content2{
+    display: flex;
+    flex-direction: row;
+} */
+
+#icon-cart:hover{
+    cursor: pointer;
+}
+
+#avatar{
+    background-image: url(/images/image-avatar.png);
+    background-position: center;
+    background-size: contain;
+    border: none;
+    border-radius: 50%;
+    height: 2.2rem;
+    width: 2.2rem;
+    margin-left: 1.6rem;
+}
+
+#avatar:active{
+    outline: solid 3px hsl(26, 100%, 55%);
+    outline-offset: -3px;
+}
+
+#avatar:hover{
+    cursor: pointer;
+}
+
+main{
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.left-section{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.left-section > img{
+    height: 24rem;
+    width: 26rem;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+
+
+.images-container {
+    width: 26rem;
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.images-container > img{
+    border-radius: 6px;
+    width: 5.2rem;
+}
+
+.images-container > img:hover{
+    opacity: 70%;
+    cursor: pointer;
+}
+
+/* figure out how to make outline fully opaque */
+.images-container > img:active{
+    opacity: 60%;
+    outline: solid 3px hsl(26, 100%, 55%);
+    outline-offset: -3px;
+}
+
+.right-section{
+   width: 50%;
+   align-items: center;
+   padding: 0 4rem;
+   margin-left: 6rem;
+}
+
+.right-section > h1 {
+    text-transform: uppercase;
+    color: hsl(26, 100%, 55%);
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.right-section > h2{
+    font-size: 2.5rem;
+    margin: 0;
+    color: hsl(220, 13%, 13%);
+}
+
+.right-section > p{
+    color:hsl(219, 9%, 45%);
+    margin-top: 2rem;
+    line-height: 1.7rem;
+    font-weight: 500;
+}
+
+.price-section > h3{
+    color: hsl(220, 13%, 13%);
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+}
+
+.price-section > h3 > span{
+    margin-top: 0;
+    margin-left: 1rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    color:hsl(26, 100%, 55%);
+    background-color: hsl(25, 100%, 94%);
+}
+
+.price-section > h4 {
+    margin-top: 0em;
+    font-size: 1rem;
+    font-weight: 600;
+    color: hsl(220, 14%, 75%);
+    text-decoration: line-through;
+}
+
+.button-section{
+    width: 100%;
+    display: inline-flex;
+    height: 2.5rem;
+}
+
+.button-amount{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: hsl(223, 64%, 98%);
+    font-weight: 600;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.button-amount span:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
+
+.button-cart{
+    width: 60%;
+    margin-left: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(26, 100%, 55%);
+    border: none;
+    border-radius: 0.5rem;
+    color: hsl(0, 0%, 100%);
+    font-weight: 600;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.button-cart:hover{
+    opacity: 70%;
+    cursor: pointer;
+    box-shadow: 0px 26px 14px -3px  hsl(25, 100%, 94%);
+}
+
+.button-cart > span > svg {
+    margin-right: 0.8rem;
+}
+
+/* toggle class for display */
+.popup-content{
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 7px;
+    width: 16rem;
+    min-height: 11rem;
+    position: absolute;
+    right: 0rem;
+    padding: 0 1rem;
+    padding-bottom: 1.5rem;
+    margin-right: -5rem;
+    margin-top: 0.5rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.popup-content:hover{
+    cursor: pointer;
+}
+
+.popup-content > h1{
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    color: hsl(220, 13%, 13%);
+    font-size: 14px;
+    border-bottom: solid 1px hsl(220, 14%, 75%);
+    padding: 1rem 0rem;
+}
+
+.popup-content > button {
+    width: 90%;
+    padding: 0.9rem;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(26, 100%, 55%);
+    border: none;
+    font-weight: 600;
+    border-radius: 9px;
+    bottom: 0;
+    margin-bottom: 1.2rem;
+    font-family: 'Kumbh Sans', sans-serif;
+    justify-content: flex-end;
+    position: absolute;
+}
+
+#checkout-button{
+    display: none;
+}
+
+.popup-content > button:hover{
+    cursor: pointer;
+    opacity: 85%;
+}
+
+.inner-content2{
+    display: flex;
+    flex-direction: row;
+}
+
+/* styles for lightbox */
+.lightbox{
+    box-sizing: border-box;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding: 2rem;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: hsla(0, 0%, 0%, 0.75);
+}
+
+.lightbox-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.current-container > img{
+    height: 26rem;
+    width: 28rem;
+    border-radius: 12px;
+}
+
+.icon{
+    position: absolute;
+    top: 38%;
+    padding: 0.6rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon > img:hover{
+    cursor: pointer;
+    stroke: hsl(26, 100%, 55%);
+}
+
+.icon-next{
+   right: 31%;
+}
+
+.icon-prev{
+    left: 31%;
+}
+
+.icon-close{
+    width: 36%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 0rem;
+}
+
+.icon-close > svg{
+    fill:  hsl(0, 0%, 100%);
+}
+
+.icon-close > svg:hover{
+    fill: hsl(26, 100%, 55%);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-mobile{
+    display: none;
+}
+
+.menu-container{
+    display: none;
+}
+
+#current-img-mobile{
+    display: none;
+}
+
+.cart-info{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cart-info > div > p{
+    font-size: 0.8rem;
+    margin: 0 0 6px 0;
+}
+
+#cart-image{
+    border: none;
+    border-radius: 6px;
+}
