@@ -29,7 +29,7 @@ To build a single ecommerce product page where users would be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Single Ecommerce Product Page](https://effervescent-nasturtium-19dbc6.netlify.app/)
 
 ## My process
 
@@ -48,4 +48,4 @@ To build a single ecommerce product page where users would be able to:
 ## Author
 
 - Frontend Mentor - [@Simplyvoda](https://www.frontendmentor.io/profile/Simplyvoda)
-- Twitter - [@Simplyvoda](https://www.twitter.com/Simplvoda)
+- Twitter - [@simplyvoda](https://www.twitter.com/Simplvoda)
